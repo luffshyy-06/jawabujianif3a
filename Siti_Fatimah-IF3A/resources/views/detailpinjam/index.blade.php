@@ -17,34 +17,38 @@
 
 <body>
 
-<div class="container mt-2">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2>Daftar Detail Peminjaman</h2>
-        <div>
-            <a href="{{ route('detailpinjam.create') }}" class="btn btn-primary mb-3">Tambah Detail Peminjaman</a>
-            <a href="/" class="btn btn-secondary mb-3">Dashboard</a>
+    <div class="container mt-2">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+            <h2>Daftar Detail Peminjaman</h2>
+            <div>
+                <form action="{{ route('detailpinjam.index') }}" method="GET" class="d-flex mb-2">
+                    <input type="text" name="search" class="form-control" placeholder="Cari Nomor Peminjaman" value="{{ request('search') }}" aria-label="Cari No Pinjam">
+                    <button type="submit" class="btn ms-2" style="background-color: purple; color: white;">Cari</button>
+                </form>
+                <a href="{{ route('detailpinjam.create') }}" class="btn btn-primary mb-2">Tambah Detail Peminjaman</a>
+                <a href="/" class="btn btn-secondary mb-2">Dashboard</a>
+            </div>
         </div>
-    </div>
-
-    @if(session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
+        
+        @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+    
+        <div class="alert alert-info mt-2">
+            <strong>NOTE:</strong>
+            <ul>
+                <li>Batas peminjaman maksimal <strong>3 hari</strong>.</li>
+                <li>
+                    Perhitungan Denda :
+                    <ul>
+                        <li>Terlambat 3 hari pertama = <strong>Rp. 10.000</strong></li>
+                        <li>Setiap keterlambatan 3 hari berikutnya = <strong>Rp. 5.000</strong></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
-    @endif
-
-    <div class="alert alert-info">
-        <strong>NOTE:</strong>
-        <ul>
-            <li>Batas peminjaman maksimal <strong>3 hari</strong>.</li>
-            <li>
-                Perhitungan Denda:
-                <ul>
-                    <li>Terlambat 3 hari pertama = <strong>Rp. 10.000</strong></li>
-                    <li>Setiap keterlambatan 3 hari berikutnya = <strong>Rp. 5.000</strong></li>
-                </ul>
-            </li>
-        </ul>
-    </div>
 
     <div class="table-container">
         <table class="table table-bordered table-striped">

@@ -9,9 +9,15 @@ use Illuminate\Http\Request;
 
 class DetailPinjamController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $detailPinjam = DetailPinjam::all();
+        if ($request->has('search') && $request->search != '') {
+            $detailPinjam = DetailPinjam::where('No_Pinjam', 'like', '%' . $request->search . '%')
+                ->get();
+        } else {
+            $detailPinjam = DetailPinjam::all();
+        }
+
         return view('detailpinjam.index', compact('detailPinjam'));
     }
 

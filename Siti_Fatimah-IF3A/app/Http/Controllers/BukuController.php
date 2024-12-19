@@ -7,12 +7,19 @@ use Illuminate\Http\Request;
 
 class BukuController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $buku = Buku::with('detailPinjam')->get();
+        $query = Buku::with('detailPinjam');
+    
+        if ($request->has('search') && $request->search != '') {
+            $search = $request->search;
+            $query->where('Nama_Buku', 'like', '%' . $search . '%');
+        }
+    
+        $buku = $query->get();
     
         foreach ($buku as $book) {
-            $book->is_returned = $book->detailPinjam->contains(function($detail) {
+            $book->is_returned = $book->detailPinjam->contains(function ($detail) {
                 return is_null($detail->Tgl_Kembali); 
             });
         }
@@ -20,7 +27,6 @@ class BukuController extends Controller
         return view('buku.index', compact('buku'));
     }
     
-
     public function create()
     {
         return view('buku.create');

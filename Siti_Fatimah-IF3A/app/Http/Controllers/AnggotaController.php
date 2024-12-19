@@ -7,9 +7,15 @@ use Illuminate\Http\Request;
 
 class AnggotaController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $anggota = Anggota::all();
+        if ($request->has('search') && $request->search != '') {
+            $anggota = Anggota::where('Nama_Anggota', 'like', '%' . $request->search . '%')
+                ->get();
+        } else {
+            $anggota = Anggota::all();
+        }
+
         return view('anggota.index', compact('anggota'));
     }
 

@@ -18,21 +18,25 @@
 <body>
 
 <div class="container mt-2">
-    <div class="d-flex justify-content-between align-items-center mb-4">
+    <div class="d-flex justify-content-between align-items-center mb-2">
         <h2>Daftar Buku</h2>
         <div>
-            <a href="{{ route('buku.create') }}" class="btn btn-primary mb-3">Tambah Buku</a>
-            <a href="/" class="btn btn-secondary mb-3">Dashboard</a>
+            <form action="{{ route('buku.index') }}" method="GET" class="d-flex mb-2">
+                <input type="text" name="search" class="form-control" placeholder="Cari Buku" value="{{ request('search') }}" aria-label="Cari Buku">
+                <button type="submit" class="btn ms-2" style="background-color: purple; color: white;">Cari</button>
+            </form>
+            <a href="{{ route('buku.create') }}" class="btn btn-primary mb-2">Tambah Buku</a>
+            <a href="/" class="btn btn-secondary mb-2">Dashboard</a>
         </div>
     </div>
-
+        
     @if(session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
         </div>
     @endif
-
-    <div class="alert alert-info">
+    
+    <div class="alert alert-info mt-2">
         <strong>NOTE:</strong>
         <ul>
             <li>Jika tabel data <strong> berwarna</strong>, Anggota belum mengembalikan buku.</li>

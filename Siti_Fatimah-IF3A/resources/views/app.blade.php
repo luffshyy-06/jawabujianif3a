@@ -37,9 +37,19 @@
     <div id="contentArea">
         <h1>Welcome to Perpustakaan Fatimah</h1>
         <p>Silahkan pilih menu pada navbar untuk melihat data.</p>
+        <hr style="margin: 20px 0;">
+        <h2 style="font-weight: bold; color: navy;">Visi</h2>
+        <p>Menjadi perpustakaan terdepan dalam menyediakan informasi dan literatur yang berkualitas untuk mendukung pendidikan dan penelitian.</p>
+    
+        <h2 style="font-weight: bold; color: navy;">Misi</h2>
+        <ul>
+            <li>Menyediakan koleksi buku dan literatur yang lengkap dan up-to-date.</li>
+            <li>Menyediakan layanan yang ramah dan profesional kepada pengunjung.</li>
+            <li>Mendukung kegiatan pendidikan dan penelitian melalui penyediaan informasi yang relevan.</li>
+            <li>Meningkatkan minat baca masyarakat melalui berbagai program dan kegiatan.</li>
+        </ul>
     </div>
 </div>
-
 
 <footer>
     <p>Siti Fatimah Az Zahrah - 2327250055</p>

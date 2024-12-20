@@ -37,14 +37,14 @@
         @endif
     
         <div class="alert alert-info mt-2">
-            <strong>NOTE:</strong>
+            <strong>NOTE</strong>
             <ul>
                 <li>Batas peminjaman maksimal <strong>3 hari</strong>.</li>
                 <li>
                     Perhitungan Denda :
                     <ul>
-                        <li>Terlambat 3 hari pertama = <strong>Rp. 10.000</strong></li>
-                        <li>Setiap keterlambatan 3 hari berikutnya = <strong>Rp. 5.000</strong></li>
+                        <li>Terlambat 3 hari pertama bayar denda sebesar <strong>Rp. 10.000</strong></li>
+                        <li>Setiap keterlambatan 3 hari berikutnya bertambah <strong>Rp. 5.000</strong></li>
                     </ul>
                 </li>
             </ul>

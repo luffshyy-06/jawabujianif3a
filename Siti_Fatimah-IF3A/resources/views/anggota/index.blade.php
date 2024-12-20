@@ -21,7 +21,7 @@
             <h2>Daftar Buku</h2>
             <div>
                 <form action="{{ route('anggota.index') }}" method="GET" class="d-flex mb-2">
-                    <input type="text" name="search" class="form-control" placeholder="Cari Anggota" value="{{ request('search') }}" aria-label="Cari Anggota">
+                    <input type="text" name="search" class="form-control" placeholder="Cari Nama Anggota" value="{{ request('search') }}" aria-label="Cari Anggota">
                     <button type="submit" class="btn ms-2" style="background-color: purple; color: white;">Cari</button>
                 </form>
                 <a href="{{ route('anggota.create') }}" class="btn btn-primary mb-2">Tambah Buku</a>

@@ -33,9 +33,17 @@
 
         <div class="mb-3">
             <label for="Jurusan" class="form-label">Jurusan</label>
-            <input type="text" name="Jurusan" id="Jurusan" value="{{ $anggota->Jurusan }}" class="form-control @error('Jurusan') is-invalid @enderror">
+            <select name="Jurusan" id="Jurusan" class="form-select @error('Jurusan') is-invalid @enderror">
+            <option value="" selected disabled>Pilih Jurusan</option>
+            <option value="Informatika" {{ $anggota->Jurusan == 'Informatika' ? 'selected' : '' }}>Informatika</option>
+            <option value="Sistem Informasi" {{ $anggota->Jurusan == 'Sistem Informasi' ? 'selected' : '' }}>Sistem Informasi</option>
+            <option value="Manajemen Informatika" {{ $anggota->Jurusan == 'Manajemen Informatika' ? 'selected' : '' }}>Manajemen Informatika</option>
+            <option value="Teknik Elektro" {{ $anggota->Jurusan == 'Teknik Elektro' ? 'selected' : '' }}>Teknik Elektro</option>
+            <option value="Manajemen" {{ $anggota->Jurusan == 'Manajemen' ? 'selected' : '' }}>Manajemen</option>
+            <option value="Akuntansi" {{ $anggota->Jurusan == 'Akuntansi' ? 'selected' : '' }}>Akuntansi</option>
+            </select>
             @error('Jurusan')
-                <div class="invalid-feedback">{{ $message }}</div>
+            <div class="invalid-feedback">{{ $message }}</div>
             @enderror
         </div>
 

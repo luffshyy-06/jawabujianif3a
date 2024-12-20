@@ -22,7 +22,7 @@
         <h2>Daftar Buku</h2>
         <div>
             <form action="{{ route('buku.index') }}" method="GET" class="d-flex mb-2">
-                <input type="text" name="search" class="form-control" placeholder="Cari Buku" value="{{ request('search') }}" aria-label="Cari Buku">
+                <input type="text" name="search" class="form-control" placeholder="Cari Nama Buku" value="{{ request('search') }}" aria-label="Cari Buku">
                 <button type="submit" class="btn ms-2" style="background-color: purple; color: white;">Cari</button>
             </form>
             <a href="{{ route('buku.create') }}" class="btn btn-primary mb-2">Tambah Buku</a>
@@ -37,11 +37,11 @@
     @endif
     
     <div class="alert alert-info mt-2">
-        <strong>NOTE:</strong>
+        <strong>NOTE</strong>
         <ul>
             <li>Jika tabel data <strong> berwarna</strong>, Anggota belum mengembalikan buku.</li>
             <li>
-                Sehingga untuk membuat laporan jumlah buku, <strong>harus dilihat dengan seksama!!!</strong>
+                Sehingga untuk melihat total jumlah buku masing-masing, <strong>harus dengan seksama!!!</strong>
             </li>
         </ul>
     </div>
